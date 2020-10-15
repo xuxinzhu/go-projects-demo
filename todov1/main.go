@@ -183,12 +183,12 @@ func UpdateTodo(c *gin.Context) {
 		})
 		return
 	}
-
+	fmt.Println("[Testing] td check if exist: ", td)
 	if err := c.BindJSON(&td); err != nil {
 		fmt.Println("bind json error: ", err)
 		panic(err)
 	}
-
+	fmt.Println("[Testing] td after bind: ", td)
 	// 更新的时候有两种情况
 	// 第一种是更新单个字段 Update("column", "newValue")
 	// 第二种是更新多个字段，这个时候有个问题存在，
